@@ -19,7 +19,7 @@ import com.sun.rowset.JdbcRowSetImpl;
 public class JdbcWithRowSetEx {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://fsd-training.cifjrkcusumc.ap-south-1.rds.amazonaws.com:3306/jdbctraining";
+	static final String DB_URL = "jdbc:mysql://localhost:3306/jdbctraining";
 
 	// Database credentials
 	static final String USER = "training";

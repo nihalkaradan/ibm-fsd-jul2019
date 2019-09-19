@@ -2,7 +2,6 @@ package com.examples.java.jdbc;
 
 //STEP 1. Import required packages
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +12,7 @@ import java.sql.Statement;
 public class JdbcWithScrollableUpdatableResultSetEx {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://fsd-training.cifjrkcusumc.ap-south-1.rds.amazonaws.com:3306/jdbctraining";
+	static final String DB_URL = "jdbc:mysql://localhost:3306/jdbctraining";
 
 	// Database credentials
 	static final String USER = "training";
@@ -41,12 +40,13 @@ public class JdbcWithScrollableUpdatableResultSetEx {
 			// STEP 4: Execute a query
 			System.out.println("Creating statement...");
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.CLOSE_CURSORS_AT_COMMIT);
-
+			
 			String selectQuery = "SELECT * FROM employee";
 			rs = stmt.executeQuery(selectQuery);
 			
 			// STEP 5: Extract data from result set
 			ResultSetMetaData rsmeta = rs.getMetaData();
+			
 			int cols = rsmeta.getColumnCount();
 
 			// Header
@@ -55,26 +55,7 @@ public class JdbcWithScrollableUpdatableResultSetEx {
 			}
 			System.out.println();
 			
-			// Insert record through resultset
-//			rs.moveToInsertRow(); // moves cursor to the insert row
-//			rs.updateString(2, "John"); // name
-//			rs.updateInt(3,35);	// age
-//			rs.updateString(4, "Manager");	// designation
-//			rs.updateString(5, "Quality");	// department
-//			rs.updateString(6, "India"); // country
-//			rs.insertRow(); // inserts row into resultset object and underlying db
-			// rs.beforeFirst();	// moves cursor to the head position
-//			 rs.moveToCurrentRow(); // moves cursor to the current position before insert
-			
-			System.out.println(rs.getRow());	// prints current cursor position
-			
-			rs.relative(10);	// cursor moves n rows relative from current position
-			System.out.println(rs.getRow());	// prints current cursor position
-			
-			rs.absolute(1);		// cursor moves to given position
-			System.out.println(rs.getRow());	// prints current cursor position
-						
-//			while (rs.next()) {
+			while (rs.next()) {
 				// Retrieve by column name
 				int id = rs.getInt("id");
 				int age = rs.getInt("age");
@@ -85,7 +66,50 @@ public class JdbcWithScrollableUpdatableResultSetEx {
 
 				// Display values
 				System.out.format("\t%d \t%d \t%s \t%s \t%s \t%s\n", id, age, name, designation, department, country);
-//			}
+			}
+			
+			// INSERT
+			rs.moveToInsertRow(); // moves cursor to the insert row
+			rs.updateString(2, "John"); // name
+			rs.updateInt(3,35);	// age
+			rs.updateString(4, "Manager");	// designation
+			rs.updateString(5, "Quality");	// department
+			rs.updateString(6, "India"); // country
+			rs.insertRow(); // inserts row into resultset object and underlying db
+			rs.beforeFirst();	// moves cursor to the head position
+			 
+			// UPDATE
+			rs.absolute(2);
+			rs.updateString(2, "Kumar");
+			rs.updateRow();
+			 
+			 // DELETE
+			 rs.relative(1);
+			 rs.deleteRow();
+			 
+//			rs.moveToCurrentRow(); // moves cursor to the current position
+			
+//			System.out.println(rs.getRow());	// prints current cursor position
+
+//			rs.relative(10);	// cursor moves n rows relative from current position
+//			System.out.println(rs.getRow());	// prints current cursor position
+			
+//			rs.absolute(2);		// cursor moves to given position
+				
+			System.out.println("After...");
+			rs.beforeFirst();
+			while (rs.next()) {
+				// Retrieve by column name
+				int id = rs.getInt("id");
+				int age = rs.getInt("age");
+				String name = rs.getString("name");
+				String designation = rs.getString("designation");
+				String department = rs.getString("department");
+				String country = rs.getString("country");
+
+				// Display values
+				System.out.format("\t%d \t%d \t%s \t%s \t%s \t%s\n", id, age, name, designation, department, country);
+			}
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC
