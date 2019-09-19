@@ -1,0 +1,29 @@
+#Start DB Server
+--run in background
+%MYSQL_HOME%\bin\mysqld
+--run in console
+%MYSQL_HOME%\bin\mysqld --console
+
+#Stop DB Server
+%MYSQL_HOME%\bin\mysqladmin -u <username> -p <password> shutdown
+
+#Connect via client
+%MYSQL_HOME%\bin\mysql -u <username> -p <password>
+--Admin commands
+connect <dbname> <hostname/ip>;
+show schemas;
+show tables;
+use <schemaname>;
+show columns from <tablename>;
+show indexes from <tablename>;
+
+#View user details
+select * from user;
+select host, user, select_priv, update_priv, delete_priv from user;
+
+#Create user
+CREATE USER 'training'@'localhost' IDENTIFIED BY 'training';
+GRANT ALL PRIVILEGES ON *.* TO 'training'@'localhost' WITH GRANT OPTION;  
+
+#Create database
+CREATE SCHEMA|DATABASE <DBNAME>;
