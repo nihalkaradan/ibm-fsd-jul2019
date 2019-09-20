@@ -3,7 +3,7 @@ History
 	- James Gosling, Mike Sheridan, Patrick Naughton
 	- v1.0 -> 1996
 	- 2006/07 -> JVM -> FOSS (Free & Open Source Software)
-	- latest version 11
+	- latest version 12
 	
 Design Goals
 	- simple, object oriented, familiar
@@ -25,6 +25,7 @@ Release
 	- v9.0 -> 2017
 	- v10  -> 2018
 	- v11  -> 2018
+	- v12  -> 2019
 	
 JDK vs JRE vs JVM
 
@@ -46,6 +47,7 @@ Language Constructs
 	- Comments
 	- Arrays
 	- Strings
+	- Numbers
 	
 Object Oriented Programming
 	- Class
@@ -150,7 +152,7 @@ Stream APIs
 		
 Other Java 8 Features
 	- Default Methods
-	- Optinoal
+	- Optional
 	- New DateTime API
 	
 Multi-threading and Concurrency API
