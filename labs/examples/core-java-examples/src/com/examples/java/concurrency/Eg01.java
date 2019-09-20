@@ -9,6 +9,13 @@ public class Eg01 extends Thread{
 	@Override
 	public void run() {
 		System.out.println(Thread.currentThread().getName() + " -->Start Running thread");
+		
+		for(int i = 0; i < 10; i++)
+		{
+			System.out.println("Custom Thread " + i);
+			
+		}
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -22,6 +29,12 @@ public class Eg01 extends Thread{
 		Eg01 t1 = new Eg01();
 		t1.start();
 
+		for(int i = 0; i < 10; i++)
+		{
+			System.out.println("Main Thread " + i);
+			
+		}
+		
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {

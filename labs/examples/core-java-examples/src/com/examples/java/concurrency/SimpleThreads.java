@@ -16,6 +16,7 @@ public class SimpleThreads {
 
 	private static class MessageLoop implements Runnable {
 		public void run() {
+			long startTime = System.currentTimeMillis();
 			String importantInfo[] = { 
 					"Mares eat oats", 
 					"Does eat oats", 
@@ -25,13 +26,16 @@ public class SimpleThreads {
 			try {
 				for (int i = 0; i < importantInfo.length; i++) {
 					// Pause for 4 seconds
-					Thread.sleep(4000);
+					System.out.println("Sleeping...");
+					Thread.sleep(20000);
 					// Print a message
 					threadMessage(importantInfo[i]);
 				}
 			} catch (InterruptedException e) {
 				threadMessage("I wasn't done!");
 			}
+			long endTime = System.currentTimeMillis();
+			System.out.println("MessageLoop thread took " + (endTime - startTime)/1000 + " secs");
 		}
 	}
 
@@ -39,25 +43,27 @@ public class SimpleThreads {
 
 		// Delay, in milliseconds before
 		// we interrupt MessageLoop
-		// thread (default one hour).
+		// thread (default ten seconds).
 		long patience = 1000 * 10;
 
 		// If command line argument
 		// present, gives patience
 		// in seconds.
-		if (args.length > 0) {
-			try {
-				patience = Long.parseLong(args[0]) * 1000;
-			} catch (NumberFormatException e) {
-				System.err.println("Argument must be an integer.");
-				System.exit(1);
-			}
-		}
+//		if (args.length > 0) {
+//			try {
+//				patience = Long.parseLong(args[0]) * 1000;
+//			} catch (NumberFormatException e) {
+//				System.err.println("Argument must be an integer.");
+//				System.exit(1);
+//			}
+//		}
 
 		threadMessage("Starting MessageLoop thread");
 		long startTime = System.currentTimeMillis();
 		Thread t = new Thread(new MessageLoop());
 		t.start();
+		
+		
 
 		threadMessage("Waiting for MessageLoop thread to finish");
 		// loop until MessageLoop

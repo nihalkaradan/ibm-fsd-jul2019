@@ -1,0 +1,2 @@
+ASSIGNMENT 1: Migrate Java Console based Employee Management Application to web based Employee Management Application using Servlets and JSP to perform CRUD operations
+ASSIGNMENT 2: Create Servlets, Filters, Listeners and configure them using Annotations
