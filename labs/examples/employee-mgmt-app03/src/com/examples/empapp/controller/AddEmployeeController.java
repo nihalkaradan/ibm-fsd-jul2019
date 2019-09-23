@@ -14,7 +14,7 @@ import com.examples.empapp.model.Employee;
 import com.examples.empapp.service.EmployeeService;
 
 @WebServlet("/addEmployee.do")
-public class EmployeeController extends HttpServlet {
+public class AddEmployeeController extends HttpServlet {
 
 		EmployeeService empService = new EmployeeService();
 		
