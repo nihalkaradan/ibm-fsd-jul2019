@@ -2,13 +2,22 @@ package com.examples.spring.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
+@Import(GreetingsConfig.class)	// import other configuration class
 class CustomerConfiguration 
 {
-    @Bean
+    @Bean(initMethod="init")
     public Customer customer() {
-        return new Customer(person());
+        Customer customer = new Customer(person());	// constructor injection
+        // setter injection
+//        customer.setPerson(person());
+        return customer;
     }
     
     @Bean
