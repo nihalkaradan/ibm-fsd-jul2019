@@ -1,11 +1,28 @@
 package com.examples.spring;
 
-public class Car {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Car { //implements InitializingBean, DisposableBean {
 
 	private String color;
 	private String model;
 	private String manufacturer;
 	private Engine engine;
+	
+	public Car() {
+		
+	}
+	
+	public Car(Engine engine) {
+		System.out.println("Car constructor called..");
+		this.engine = engine;
+	}
+	
+//	public static Car createInstance(Engine engine) {
+//		Car car = new Car(engine);
+//		return car;
+//	}
 
 	public String getColor() {
 		return color;
@@ -36,7 +53,23 @@ public class Car {
 	}
 
 	public void setEngine(Engine engine) {
+		System.out.println("Car setter called..");
 		this.engine = engine;
 	}
-
+	
+	public void init() {
+		System.out.println("Car Bean Initialized...");
+	}
+	
+	public void destroy() {
+		System.out.println("Car Bean Destroyed...");
+	}
+	
+//	public void afterPropertiesSet() throws Exception {
+//		System.out.println("Car Bean Initialized...");		
+//	}
+//
+//	public void destroy() throws Exception {
+//		System.out.println("Car Bean Destroyed...");		
+//	}
 }

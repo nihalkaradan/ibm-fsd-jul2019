@@ -1,6 +1,9 @@
 package com.examples.spring;
 
-public class Engine {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class Engine { //implements InitializingBean, DisposableBean {
 
 	private int capacity;
 	private int noOfCynclinders;
@@ -29,5 +32,13 @@ public class Engine {
 	public void setTorque(int torque) {
 		this.torque = torque;
 	}
+	
+	public void init() {
+		System.out.println("Engine Bean Initialized...");
+	}
+	
+	public void destroy() {
+		System.out.println("Engine Bean Destroyed...");
+	}	
 
 }
