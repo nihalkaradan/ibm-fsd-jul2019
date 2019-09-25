@@ -4,12 +4,22 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("customer")
+@Lazy(true)
+@Scope("singleton")
 public class Customer {
 	
-	@Autowired
+	@Autowired(required=false)
+	@Qualifier("commonMan1")
 	private Person person;
 	
 	public Customer()
@@ -17,7 +27,7 @@ public class Customer {
 		
 	}
 	
-	//@Autowired
+//	@Autowired
 	public Customer(Person person) {
 		this.person = person;
 	}

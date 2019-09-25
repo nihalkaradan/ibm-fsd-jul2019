@@ -11,6 +11,8 @@
    <context:annotation-config/>
    
    <context:component-scan base-package="com.examples.spring.core.annotation" />
+   
+   <!-- <bean id="customer" class="com.examples.spring.core.annotation.Customer" autowire="byType"/> -->
 				 
 <!-- 	<bean id="person" class="com.examples.spring.core.annotation.Person">
 		<property name="name" value="Kumar" />

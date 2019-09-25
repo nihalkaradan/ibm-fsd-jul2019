@@ -10,7 +10,16 @@ public class AnnotationBasedDepedencyInjectionEx01 {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans-annotation-config.xml");
 		
 		Customer obj = (Customer) context.getBean("customer");
+		System.out.println("Customer: " + obj);
+		System.out.println("Dependent Person: " + obj.getPerson());
 
+		Person obj1 = (Person) context.getBean("person");
+		System.out.println("Person: " + obj1);
+		
+		obj.getPerson().setName("Anand");
+		obj.getPerson().setAge(40);
+		obj.getPerson().setLocation("Cochin");
+		
 		System.out.println(
 				obj.getPerson().getName() + " " + obj.getPerson().getAge() + " " + obj.getPerson().getLocation());
 		

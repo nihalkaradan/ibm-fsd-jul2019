@@ -1,12 +1,16 @@
 package com.examples.spring.core.annotation;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Person 
+public abstract class Person 
 {
+	@Value("Ankit")
 	String name;
+	@Value("23")
 	int age;
+	@Value("Bengaluru")
 	String location;
 
 	public Person() {
