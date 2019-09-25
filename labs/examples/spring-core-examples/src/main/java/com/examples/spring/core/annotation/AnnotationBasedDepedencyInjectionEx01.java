@@ -13,8 +13,8 @@ public class AnnotationBasedDepedencyInjectionEx01 {
 		System.out.println("Customer: " + obj);
 		System.out.println("Dependent Person: " + obj.getPerson());
 
-		Person obj1 = (Person) context.getBean("person");
-		System.out.println("Person: " + obj1);
+//		Person obj1 = (Person) context.getBean("person");
+//		System.out.println("Person: " + obj1);
 		
 		obj.getPerson().setName("Anand");
 		obj.getPerson().setAge(40);

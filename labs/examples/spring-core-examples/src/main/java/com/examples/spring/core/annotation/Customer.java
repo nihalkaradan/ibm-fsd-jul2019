@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class Customer {
 	
 	@Autowired(required=false)
-	@Qualifier("commonMan1")
+	@Qualifier("commonMan")
 	private Person person;
 	
 	public Customer()
