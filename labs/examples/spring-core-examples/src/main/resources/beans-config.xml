@@ -6,7 +6,7 @@
    http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Bean instantiation with default constructor -->
-	<bean id="greetings" class="com.examples.spring.core.Greetings"> <!-- init-method="init" destroy-method="cleanup"> -->
+	<bean id="greetings" class="com.examples.spring.core.Greetings" lazy-init="default"> <!-- init-method="init" destroy-method="cleanup"> -->
 		<property name="message"
 			value="Welcome to Spring Framework Training :)" />
 	</bean>
@@ -60,7 +60,7 @@
 		factory-bean="serviceLocator" factory-method="createAccountService" />
 	<!-- Bean instantiation with instance factory method - END -->
 
-	<!-- Injecting collection -->
+	<!-- Injecting collection - START -->
 	<bean id="collectionInjectionEx"
 		class="com.examples.spring.core.injection.CollectionInjectionEx">
 
@@ -104,7 +104,11 @@
 			</props>
 		</property>
 	</bean>
-
+	<!-- Injecting collection - END -->
+	
+	<!-- Bean Post Processor - START -->
+	<bean id="greetingsBeanPostProcessor" class="com.examples.spring.core.bean.GreetingsBeanPostProcessor" />
+	<!-- Bean Post Processor - END -->
 
 	<!-- Bean Definition inheritance example - START -->
 	<bean id="personTemplate"

@@ -5,9 +5,11 @@ Servlet Lifecycle -> init, service, destroy
 Servlet Interface
 ServletRequest
 ServletResponse
+
 ServletConfig
 ServletContext
 RequestDispatcher
+
 GenericServlet Interface
 HttpServlet Interface
 HttpServletRequest
@@ -17,11 +19,14 @@ HttpSession
 	a) Cookies  <- Browser should allow cookies
 	b) Hidden Fields <- keeping session ids as part of hidden fields
 	c) URL Rewriting <- appended as part of request URL
+	
 Redirecting the request
 Forwarding the request -> Request Dispatcher
 Error Handling
 
 Filters
 Listeners
-Servlet Config
-Servlet Context
+Servlet Annotations
+	- @WebServlet
+	- @WebFilter
+	- @WebListener

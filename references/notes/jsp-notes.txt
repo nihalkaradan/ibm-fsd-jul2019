@@ -20,7 +20,7 @@ JSP Actions
 	- Param
 
 Implicit Objects
-	- page
+	- pageContext
 	- request
 	- response
 	- session

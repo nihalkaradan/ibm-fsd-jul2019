@@ -2,12 +2,43 @@ ibm-fsd-backend
 	|
 	|____	labs
 			|
-			|__ corejava
+			|__corejava
+			|
+			|__servletjsp
+			|
+			|__springcore
+			|
+			|__springmvc
+			|
+			|__springrest
+			|
+			|__springboot
 
 	|
 	|____ 	assignments
 				|
 				|__corejava
 					|
-					|___ employee-mgmt-app01
-	
+					|___employee-mgmt-app01
+										
+					|___employee-mgmt-app02
+				|
+				|__servletjsp
+					|
+					|___employee-mgmt-app03	
+				|
+				|__springcore
+					|
+					|___employee-mgmt-app04
+				|
+				|__sprngmvc
+					|
+					|__employee-mgmt-app05
+				|
+				|__springrest
+					|
+					|__employee-mgmt-app06
+				|
+				|__springboot
+					|
+					|__employee-mgmt-app07
