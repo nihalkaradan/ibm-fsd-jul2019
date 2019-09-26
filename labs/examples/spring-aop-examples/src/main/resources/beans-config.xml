@@ -32,17 +32,16 @@
 <!-- Spring AOP XML Configuration -->
 <!-- <aop:config>
 	<aop:aspect ref="employeeXMLConfigAspect" id="loggingAspectXMLConfig" order="1">
-		Pointcut Definitions
 		<aop:pointcut expression="execution(* com.examples.spring.aop.model.Employee.*(..))" id="selectAll"/>
- 		<aop:pointcut expression="execution(* com.examples.spring.aop.model.Employee.set*(..))" id="selectSetter"/>
+  		<aop:pointcut expression="execution(* com.examples.spring.aop.model.Employee.set*(..))" id="selectSetter"/>
 		<aop:pointcut expression="execution(* com.examples.spring.aop.model.Employee.get*(..))" id="selectGetter"/>
 		<aop:pointcut expression="execution(* com.examples.spring.aop.model.Employee.throw*(..))" id="selectException"/>
-		Advice Definitions
-	 	<aop:before method="beforeAdvice" pointcut-ref="selectAll"/>
-		<aop:after method="afterAdvice" pointcut-ref="selectAll"/>
-		<aop:around method="employeeAroundAdvice" pointcut-ref="selectSetter" arg-names="proceedingJoinPoint"/>
-		<aop:after-returning method="returningAdvice" pointcut-ref="selectGetter" returning="retVal"/>
+		
+	 	<aop:before method="beforeAdvice" pointcut-ref="selectAll"/>		
+ 		<aop:around method="employeeAroundAdvice" pointcut-ref="selectAll" arg-names="proceedingJoinPoint"/>
+ 		<aop:after-returning method="returningAdvice" pointcut-ref="selectAll" returning="retVal"/>		
 		<aop:after-throwing method="afterThrow" pointcut-ref="selectException" throwing="ex"/>
+		<aop:after method="afterAdvice" pointcut-ref="selectAll"/>		
 	</aop:aspect>
 </aop:config> -->
 

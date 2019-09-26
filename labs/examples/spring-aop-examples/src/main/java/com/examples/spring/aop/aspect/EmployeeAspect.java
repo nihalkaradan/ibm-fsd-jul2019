@@ -1,7 +1,9 @@
 package com.examples.spring.aop.aspect;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,15 +12,21 @@ public class EmployeeAspect {
 
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeAspect.class);
 
-	public EmployeeAspect() {
-		System.out.println("instance created");
+	@Before("selectGetterPointcut()")
+	public void executeBefore() {
+		logger.info("Executing Before Advice");
 	}
-
-	@Before("execution(* get*(..))")
-	public void getNameAdvice() {
-		logger.info("Executing Advice on getName()");
-		System.out.println("This is injected from Employee Aspect 1 for getName ");
+	
+	@After("selectGetterPointcut()")
+	public void executeAfter() {
+		logger.info("Executing After Advice");
 	}
+	
+	@Pointcut("execution(* com.examples.spring.aop.model.Employee.get*(..))")
+	public void selectGetterPointcut() {
+		logger.info("Inside getNamePointcut() executing get*()");
+	}
+	
 
 //	@Before("execution(* com.examples.spring.aop.model.Employee.setName(..))")
 ////	@Before("execution(public String getName())")
