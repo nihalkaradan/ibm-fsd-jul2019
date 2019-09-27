@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>
-	Welcome to Spring MVC training :)
+	Hello World!
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
