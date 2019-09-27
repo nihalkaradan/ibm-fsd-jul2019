@@ -25,7 +25,7 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView showRegisterForm(ModelMap modelMap) {
+	public ModelAndView showLoginForm(ModelMap modelMap) {
 
 		ModelAndView modelView = new ModelAndView("login", "command", new User());
 		modelView.addAllObjects(modelMap);
