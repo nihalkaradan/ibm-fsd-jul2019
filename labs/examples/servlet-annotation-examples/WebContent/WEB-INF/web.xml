@@ -13,7 +13,7 @@
     <param-name>contextParam</param-name>
     <param-value>Context Param Demo</param-value>
   </context-param>
-  <servlet>
+<!--   <servlet>
     <servlet-name>EmployeeRegistrationServlet</servlet-name>
     <servlet-class>com.examples.java.servlet.EmployeeRegistrationServlet</servlet-class>
     <init-param>
@@ -29,10 +29,10 @@
     <servlet-name>EmployeeAuthenticateServlet</servlet-name>
     <servlet-class>com.examples.java.servlet.EmployeeAuthenticateServlet</servlet-class>
   </servlet>
-<!--   <servlet>
+  <servlet>
     <servlet-name>EmployeeHomeServlet</servlet-name>
     <servlet-class>com.examples.java.servlet.EmployeeHomeServlet</servlet-class>
-  </servlet> -->
+  </servlet>
   <servlet-mapping>
     <servlet-name>EmployeeRegistrationServlet</servlet-name>
     <url-pattern>/register.do</url-pattern>
@@ -41,7 +41,7 @@
     <servlet-name>EmployeeAuthenticateServlet</servlet-name>
     <url-pattern>/authenticate.do</url-pattern>
   </servlet-mapping>
-<!--   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>EmployeeHomeServlet</servlet-name>
     <url-pattern>/home.do</url-pattern>
   </servlet-mapping> -->

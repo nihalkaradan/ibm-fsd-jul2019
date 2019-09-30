@@ -46,12 +46,14 @@ Spring Core
 	- Annotation Based Configuration
 		- @Component
 		- @ComponentScan
-		- @Bean
 		- @Autowired
 		- @Primary
 		- @Qualifier
 		- @Scope
 		- @Lazy
+		- @DependsOn
+		- @Required
+		- @Value
 	
 	- Java Based Configuration
 		- @Configuration
@@ -61,3 +63,6 @@ Spring Core
 		- @Qualifier
 		- @Scope
 		- @Lazy
+		- @DependsOn
+		- @Required
+		- @Value		

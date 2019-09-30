@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Employee Registration Servlet
  */
+@WebServlet("/authenticate.do")
 public class EmployeeAuthenticateServlet extends HttpServlet {
 	
 	/* 
@@ -69,11 +71,11 @@ public class EmployeeAuthenticateServlet extends HttpServlet {
 //			 rd.forward(request, response);
 			
 			// OPTION #1: Redirecting to employee management home page
-			//response.sendRedirect("http://localhost:8081/servlet-form-examples/home.html");	
+			//response.sendRedirect("http://localhost:8080/servlet-annotation-examples/home.html");	
 			
 			// OPTION #2: Redirecting to employee management home page
 			// response.setStatus(response.SC_MOVED_TEMPORARILY);
-			// response.setHeader("Location", "http://localhost:8081/servlet-form-examples/home.html");
+			// response.setHeader("Location", "http://localhost:8080/servlet-annotation-examples/home.html");
 		}
 		else {
 			out.print("<p>Login Failed.</p>");	
