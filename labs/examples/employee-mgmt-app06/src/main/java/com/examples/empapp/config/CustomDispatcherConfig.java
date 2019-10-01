@@ -44,8 +44,9 @@ public class CustomDispatcherConfig {
 	public Connection connection() {
 		Connection conn = null;
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbctraining", "training", "training");
-		} catch (SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 		return conn;
