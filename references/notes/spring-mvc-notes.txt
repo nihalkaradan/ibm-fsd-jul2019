@@ -37,6 +37,7 @@
 		- Velocity/Thymeleaf
 		- PDF, Excel
 		- Spring Form Tags
+	- i18n (Internationalization)
 	
 	- Creating Forms with various controls
 	- Form validation
