@@ -1,11 +1,16 @@
 package com.examples.empapp.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Models employee object
  */
+@XmlRootElement
 public class Employee {
 
 	private int empId;
+	@NotEmpty(message = "Employee Name can't be empty.")
 	private String name;
 	private int age;
 	private String department;

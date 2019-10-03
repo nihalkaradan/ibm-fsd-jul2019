@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.examples.empapp.exception.DataException;
 import com.examples.empapp.model.Employee;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
@@ -23,7 +24,7 @@ public class EmployeeDAO {
 
 	}
 
-	public boolean create(Employee employee) {
+	public boolean create(Employee employee) throws DataException {
 		// INSERT employee data
 		boolean status = false;
 		try {
@@ -35,7 +36,8 @@ public class EmployeeDAO {
 
 			status = stmt.execute(query);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
+			throw new DataException(e.getMessage(), e);
 		}
 		return status;
 	}

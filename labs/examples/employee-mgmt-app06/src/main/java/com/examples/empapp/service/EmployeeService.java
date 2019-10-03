@@ -17,6 +17,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.examples.empapp.dao.EmployeeDAO;
+import com.examples.empapp.exception.ApplicationException;
+import com.examples.empapp.exception.DataException;
 import com.examples.empapp.model.Employee;
 
 public class EmployeeService {
@@ -28,8 +30,12 @@ public class EmployeeService {
 //		employeeDao = new EmployeeDAO();
 	}
 
-	public boolean create(Employee employee) {
-		return employeeDao.create(employee);		
+	public boolean create(Employee employee) throws ApplicationException {
+		try {
+			return employeeDao.create(employee);
+		} catch (DataException e) {
+			throw new ApplicationException("Server Error. Please try after sometime. Cause: " + e.getMessage(), e); 
+		}		
 	}
 
 	public Employee get(int id) {
