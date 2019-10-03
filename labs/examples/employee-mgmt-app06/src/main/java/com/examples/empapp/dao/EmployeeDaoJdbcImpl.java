@@ -11,16 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.examples.empapp.exception.DataException;
 import com.examples.empapp.model.Employee;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
-public class EmployeeDAO {
+public class EmployeeDaoJdbcImpl implements EmployeeDao{
 
 	@Autowired
 	Connection conn;
 	Statement stmt = null;
 	ResultSet rs = null;
 
-	public EmployeeDAO() {
+	public EmployeeDaoJdbcImpl() {
 
 	}
 

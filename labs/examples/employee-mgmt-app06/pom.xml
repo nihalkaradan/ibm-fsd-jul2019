@@ -16,7 +16,7 @@
 		<jackson.library>2.9.5</jackson.library>
 		<javax.validation-api-version>2.0.0.Final</javax.validation-api-version>
 		<org.hibernate-validator-version>6.0.1.Final</org.hibernate-validator-version>
-		<commons-lang-version>3.5</commons-lang-version>		
+		<commons-lang-version>3.5</commons-lang-version>
 		<mysql-version>5.1.46</mysql-version>
 		<slf4j-version>1.7.26</slf4j-version>
 		<slf4j-log4j-version>1.7.26</slf4j-log4j-version>
@@ -35,6 +35,13 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
+		<!-- Spring JDBC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>		
 
 		<!-- Servlet -->
 		<dependency>
@@ -50,7 +57,7 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.library}</version>
 		</dependency>
-		
+
 		<!-- Form Validation using Annotations -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -62,7 +69,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>${org.hibernate-validator-version}</version>
-		</dependency>				
+		</dependency>
 
 		<!-- MySQL database connector -->
 		<dependency>
@@ -70,12 +77,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-version}</version>
 		</dependency>
-		
+
 		<!-- Commons Lang -->
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-    		<artifactId>commons-lang3</artifactId>
-    		<version>${commons-lang-version}</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang-version}</version>
 		</dependency>
 
 		<!-- Logging -->
