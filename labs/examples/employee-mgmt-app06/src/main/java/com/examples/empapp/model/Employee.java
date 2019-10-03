@@ -1,7 +1,11 @@
 package com.examples.empapp.model;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+
+
 
 /**
  * Models employee object
@@ -12,6 +16,8 @@ public class Employee {
 	private int empId;
 	@NotEmpty(message = "Employee Name can't be empty.")
 	private String name;
+	@NotNull(message = "Age can't be empty.")
+	@Min(value = 18, message ="Age should be more than 18 years.")
 	private int age;
 	private String department;
 	private String designation;
