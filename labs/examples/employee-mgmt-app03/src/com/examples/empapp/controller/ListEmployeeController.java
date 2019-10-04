@@ -27,8 +27,6 @@ public class ListEmployeeController extends HttpServlet {
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			List<Employee> employees = empService.getAll();
 			
-			System.out.println(employees);
-			
 			req.setAttribute("empList", employees);
 			
 			RequestDispatcher rd = req.getRequestDispatcher("listEmployees.jsp");

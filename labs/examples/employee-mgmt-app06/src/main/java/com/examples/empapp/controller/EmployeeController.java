@@ -38,7 +38,7 @@ public class EmployeeController {
 	EmployeeService empService;
 
 	// List All Employees GET /employees
-	@GetMapping(produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	@GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
 	@CrossOrigin("*")
 	public List<Employee> getAllEmployees() {
 
