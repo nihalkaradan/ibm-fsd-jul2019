@@ -1,0 +1,14 @@
+#Git Commands
+git clone https://github.com/asaravanakumar/ibm-fsd-jul2019.git
+git pull
+
+#Spring CLI
+spring init --build=maven --java-version=1.8 --dependencies=web --packaging=war SpringBootCLIEx.zip
+
+#Spring Boot Command Line Switch
+java -jar target/spring-boot-profile-1.0.jar --spring.profiles.active=prod
+
+#Security - OAuth2 with JWT
+openssl genrsa -out jwt.pem 2048
+openssl rsa -in jwt.pem
+openssl rsa -in jwt.pem -pubout
