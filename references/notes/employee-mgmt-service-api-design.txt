@@ -1,0 +1,20 @@
+Employee API
+============
+
+Base URL: http://localhost:8080/employee-mgmt-app06
+
+Addressability - /employees
+Accessability - List, Add, Udpate, Delete => GET, POST, PUT, DELETE
+Representation - XML, JSON
+
+GET		/employees			=> List All Employees
+GET 	/employees/{id}		=> List employee for given Id
+POST	/employees			=> Create Employee
+PUT		/employees/{id}		=> Update Employee
+DELETE	/employees/{id}		=> Delete Employee
+
+1) Maven Webapp
+2) Add Dependencies in POM
+3) DispatcherServlet Configuration
+4) Create EmployeeController
+5) 

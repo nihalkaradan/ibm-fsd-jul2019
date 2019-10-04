@@ -1,0 +1,53 @@
+Enhance Spring MVC/REST Employee Management App to use Hibernate
+===========================================================
+1) Add dependencies -> hibernate, spring-orm
+2) Create EmployeeDAO <- SessionFactory bean
+
+public interface EmployeeDAO {	
+	public void addEmployee(Employee emp);
+	public void updateEmployee(Employee emp);
+	public List<Employee> listEmployees();
+	public Employee getEmployeeById(int id);
+	public void removeEmployee(int id);
+}
+
+3) Create Datasource
+
+4) Create SessionFactory bean <- datasource, hibernate prop, annotated classes
+
+5) Inject SessionFactory bean into DAO
+
+6) Create Transaction Manager <- SessionFactory bean
+7) Update Spring config -> Enable Annotation driven Transaction Manager
+
+8) Annotate entity classes
+
+9) Inject DAO dependency into service
+
+10) Update Service methods to invoke DAO methods
+
+
+**********************************************************************
+Spring MVC + Hibernate Integration
+	1) Add maven dependencies in the POM
+		- hibernate-core
+		- spring-orm
+		- commons-cpdb2
+		- mysql-connector
+	2) Add below bean definitions in applicaiton context config (servlet-context.xml)
+		- Datasource bean
+			- DB connectivity details - url, credentials, connection pool size, etc.
+		- SessionFactory bean
+			- Datasource, Hibernate properties, Annotated Entity classes
+		- Transaction Manager bean
+			- Inject SessionFactorBean
+			- Register with Spring Container
+	3) Annotate Entity classes
+		- @Entity, @Table, @Column, @OneToOne, @OneToMany, @ManyToOne, @ManyToMany
+	4) Create DAO classes
+		- @Repository
+		- Obtain SessionFactory reference
+		- Perform CRUD operations
+	5) Update Service classes to refer DAO
+		- Inject DAO reference
+		- Perform CRUD operations	
