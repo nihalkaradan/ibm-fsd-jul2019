@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.examples.empapp</groupId>
-	<artifactId>employee-mgmt-app07</artifactId>
+	<artifactId>employee-mgmt-app08</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>employee-mgmt-app08</name>
 	<description>Demo project for Spring Boot</description>
