@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		
 		UserAccount userAccount =  this.userRepository.findByUserName(userName).get();
 		
-		return new User(userAccount.getUserName(), userAccount.getPassword(), AuthorityUtils.createAuthorityList("ADMIN", "USER"));
+		return new User(userAccount.getUserName(), userAccount.getPassword(), AuthorityUtils.createAuthorityList("ROLE_" + userAccount.getRole()));
 		
 		
 	}

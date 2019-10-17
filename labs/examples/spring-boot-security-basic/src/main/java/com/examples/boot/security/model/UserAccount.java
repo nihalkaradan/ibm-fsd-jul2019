@@ -2,35 +2,47 @@ package com.examples.boot.security.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+//@Entity
+//@Table(name = "users")
+@Document("users")
 public class UserAccount {
 
+    @Transient
+    public static final String SEQUENCE_NAME = "users_sequence";
+	
 	@Id
-	@GeneratedValue
-	Long id;
+//	@javax.persistence.Id
+//	@GeneratedValue
+	long id;
 
 	String userName;
 	String password;
+	String role;
 	boolean active;
 	
 	public UserAccount() {
 		
 	}
 
-	public UserAccount(String userName, String password, boolean active) {
+	public UserAccount(String userName, String password, String role, boolean active) {
 		super();
 		this.userName = userName;
 		this.password = password;
+		this.role = role;
 		this.active = active;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -58,4 +70,11 @@ public class UserAccount {
 		this.active = active;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }
