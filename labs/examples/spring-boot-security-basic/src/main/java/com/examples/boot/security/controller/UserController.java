@@ -2,16 +2,18 @@ package com.examples.boot.security.controller;
 
 import java.security.Principal;
 
-import javax.annotation.security.PermitAll;
-
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
+
+	@RequestMapping("/")
+	@CrossOrigin("*")
+	public String home() {
+		return "Spring Security (Basic) Demo Service!";
+	}
 	
 	@RequestMapping("/greetings")
 	@CrossOrigin("*")
