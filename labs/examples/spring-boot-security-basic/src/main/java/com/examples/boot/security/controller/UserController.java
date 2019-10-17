@@ -11,14 +11,14 @@ public class UserController {
 
 	@RequestMapping("/")
 	@CrossOrigin("*")
-	public String home() {
-		return "Spring Security (Basic) Demo Service!";
-	}
-
-	@RequestMapping("/greetings")
-	@CrossOrigin("*")
 	public String greetings() {
 		return "Hey! Welcome to Spring Security Training";
+	}
+
+	@RequestMapping("/authenticate")
+	@CrossOrigin("*")
+	public Principal authenticate(Principal user) {
+		return user;
 	}
 
 	@RequestMapping("/user")

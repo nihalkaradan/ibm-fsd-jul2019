@@ -8,17 +8,19 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Entity
-//@Table(name = "users")
-@Document("users")
+@Entity
+@Table(name = "users")
+//@Document("users")
 public class UserAccount {
 
     @Transient
     public static final String SEQUENCE_NAME = "users_sequence";
-	
-	@Id
-//	@javax.persistence.Id
-//	@GeneratedValue
+
+    // Enable for MongoDB	
+//	@Id
+    // Enable for JPA
+	@javax.persistence.Id
+	@GeneratedValue
 	long id;
 
 	String userName;

@@ -32,7 +32,7 @@ public class BasicSecurityApplication implements CommandLineRunner {
 		// Saving Encrypted Password
 		userRepository.save(new UserAccount("admin",encoder.encode("admin"),"ADMIN",true));
 		userRepository.save(new UserAccount("manager",encoder.encode("manager"),"MANAGER",true));
-		userRepository.save(new UserAccount("arun",encoder.encode("arun"),"USER",true));
+		userRepository.save(new UserAccount("user",encoder.encode("user"),"USER",true));
 		
 		System.out.println(userRepository.findAll());
 	}

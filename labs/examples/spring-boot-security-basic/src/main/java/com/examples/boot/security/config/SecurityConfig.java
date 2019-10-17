@@ -19,10 +19,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.csrf().disable()
 			// Authorize Requests
 			.authorizeRequests()
-			// Allow greetings request w/o authentication
+			// Allow root request w/o authentication
+			.antMatchers("/").permitAll()
+			// Allow greetings request w/o authentication			
 			.antMatchers("/greetings/**").permitAll()
+			// Allow user endpoint for USER and ADMIN roles
 			.antMatchers("/user/**").hasAnyRole("USER","ADMIN")
+			// Allow manager endpoint for MANAGER and ADMIN roles			
 			.antMatchers("/manager/**").hasAnyRole("MANAGER","ADMIN")
+			// Allow admin endpoint for ADMIN role
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			// Authenticate rest all requests
 			.anyRequest().authenticated()
