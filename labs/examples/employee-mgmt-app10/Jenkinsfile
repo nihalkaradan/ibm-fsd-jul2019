@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-				dir('labs\examples\employee-mgmt-app10') {
+				dir('labs/examples/employee-mgmt-app10') {
 					sh 'mvn -DskipTests=true clean package' 
 				}
             }
@@ -25,13 +25,13 @@ pipeline {
 		
         stage ('Test') {
             steps {
-				dir('labs\examples\employee-mgmt-app10') {
+				dir('labs/examples/employee-mgmt-app10') {
 					sh 'mvn test' 
 				}
             }
             post {
                 always {
-					dir('labs\examples\employee-mgmt-app10') {
+					dir('labs/examples/employee-mgmt-app10') {
 						junit 'target/surefire-reports/**/*.xml'
 					}
                 }
